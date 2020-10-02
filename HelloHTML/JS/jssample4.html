@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .divv{
+            display: flex;
+            justify-content: space-between;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <div>
+        <input type="text" id="i1">
+    </div>
+
+    <div>
+        <button onclick="Ekle()">Ekle</button>
+    </div>
+    <div>
+        <button onclick="Sirala()">Sırala</button>
+    </div> -->
+<!-- 
+    <div class="divv">
+        <div id="box1" style="width: 100px; height: 100px; background-color: aqua;
+position: relative; left: 0;"></div>
+        <div id="box2" style="width: 100px; height: 100px; background-color: brown;
+position: relative;right: 0; "></div>
+    </div>
+
+    <div>
+        <input type="text" id="birim">
+        <button onclick="Kaydir()">Kaydır</button>
+    </div> -->
+
+    <div>
+        <input type="text" id="kelime">
+        <button onclick="Ekle()">Ekle</button>
+    </div>
+</body>
+
+</html>
+<script>
+    //10 Ekrana bir input iki buton koy. Arka tarafta global bir dizi oluştur. İçi boş bir dizi. ( var sayilar = []; gibi ) Butonlardan birine tıkladığında inputtan veriyi alıp diziye ekle. Diğer butona tıkladığında ise dizideki elemanları sıralayıp console  a yaz
+    // var sayilar = [];
+    // function Ekle() {
+    //     var number = document.getElementById("i1").value;
+    //     sayilar.push(number);
+    // }
+    // function Sirala() {
+    //     console.log(sayilar.sort(function (a, b) { return a - b }));
+    // }
+
+
+    //11 Ekrana iki div koy. Boyut ve yükseklik ver. Bir div ekranın en solunda bir div ekranın en sağında olsun. Sonra da bir input ve bir buton koy. Butona her tıklandığında div ler birbirine inputtaki px ölçüsünde yaklaşsın.
+    // var x = 0;
+    // function Kaydir() {
+    //     x = Number(x) + Number(document.getElementById("birim").value);
+    //     document.getElementById("box1").style.left = x + "px";
+    //     document.getElementById("box2").style.right = x + "px";
+    // }
+
+    //12 Boş dizi tanımla. Bir input ve bir buton koy. Butona her tıkladığında diziye kelimeyi eklesin. Eğer kelimedeki harf sayısı 10 dan büyükse ilk 10 harfi eklesin.
+    var kelimeler=[];
+    function Ekle(){
+        var x = document.getElementById("kelime").value;
+        kelimeler.push(x);
+        if (x) {
+            
+        }
+    }
+</script>

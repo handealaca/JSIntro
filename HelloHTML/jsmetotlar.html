@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function Topla(ad, soyad) {
+        var sonuc = ad + soyad;
+        return sonuc;
+    }
+
+    function Büyüt(text1, text2) {
+        var text = text1 + ' ' + text2;
+        return text.toUpperCase();
+    }
+
+
+    function KDV(price, kdv) {
+        if (kdv != undefined) {
+            var sum = Number(price) + Number(price * kdv);
+        }
+        else {
+            var sum = price * 1.08;
+        }
+        return sum;
+    }
+
+
+    function dizi(array, y) {
+        var sonuc = array[y];
+        return sonuc;
+    }
+
+    function dizi(array, y) {
+        var sonuc = 0;
+        for (i = 0; i <= y; i++) {
+            sonuc = sonuc + array[i];
+        }
+        return sonuc;
+    }
+
+    function DiziBirlestir(array1, array2) {
+        var dizi = array1.concat(array2);
+        return dizi;
+    }
+
+    function Arraytext(array1, array2) {
+        var dizi = array1.concat(array2);
+        dizi = dizi.sort();
+        return dizi;
+    }
+
+
+    function Dt(dt) {
+        var d = new Date(dt);
+        var d = d.setDate(d.getDate() + 1);
+        return new Date(d);
+    }
+
+
+
+
+</script>

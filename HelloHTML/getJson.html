@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <table class="table">
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Contact Name</th>
+                <th>Contact Title</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div class="modal" id="productdetail">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Product Detail</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label for="">Street : </label>
+                        <label for="" id="street"></label>
+
+                    </div>
+                    <div>
+                        <label for="">City : </label>
+                        <label for="" id="city"></label>
+
+                    </div>
+                    <div>
+                        <label for="">Country : </label>
+                        <label for="" id="country"></label>
+
+                    </div>
+                    <div>
+                        <label for="">Phone : </label>
+                        <label for="" id="phone"></label>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <select id="city">
+        <option value="1">İstanbul</option>
+        <option value="2">İzmir</option>
+        <option value="3">Ankara</option>
+    </select> -->
+
+    <!-- <ul id="city">
+        <li>İstanbul</li>
+        <li>İzmir</li>
+        <li>Ankara</li>
+        <li>Antalya</li>
+    </ul>
+    <button id="sec">Seç</button> -->
+    <!-- <div id="form">
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <input type="radio" name="gender" value="Others">Others
+        <button id="Gender">Seçileni yaz</button>
+    </div> -->
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Şehir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hande</td>
+                <td>Alaca</td>
+                <td>İstanbul</td>
+            </tr>
+            <tr>
+                <td>Çağatay</td>
+                <td>Yıldız</td>
+                <td>Ankara</td>
+            </tr>
+            <tr>
+                <td>Ayşe</td>
+                <td>Yılmaz</td>
+                <td>İzmir</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="getnames">Get Names</button>
+</body>
+
+</html>
+<script>
+    // $.getJSON("https://northwind.now.sh/api/suppliers", function (data) {
+
+    //     data.forEach(element => {
+    //         $('tbody').append(`<tr id=`+element.id+`>
+    //               <td>`+ element.companyName + `</td>
+    //               <td>`+ element.contactName + `</td>
+    //               <td>`+ element.contactTitle + `</td>
+    //     </tr>`
+    //         )
+    //     });
+    // })
+
+
+    // $(document).on("click", "tr", function () {
+    //     var id = $(this).attr("id");
+
+    //     $.getJSON("https://northwind.now.sh/api/suppliers/" + id, function (data) {
+
+    //         $('#productdetail').modal('show');
+
+    //         $("#street").html(data.address.street);
+    //         $("#city").html(data.address.city);
+    //         $("#country").html(data.address.country);
+    //         $("#phone").html(data.address.phone);
+
+    //     })
+    // })
+
+    // $(document).on('change', '#city', function () {
+
+    //     //1. yol
+    //     var selected = $(this).children('option:selected').val()
+    //     var x = $(this).children('option:selected').html();
+    //     console.log(x);
+
+
+    //2.yol
+    //     var selected2 = $(this).val();
+    // })
+
+
+
+    //1.yol
+    // var x = $('input:radio[name="gender"]:checked').val()
+    // console.log(x);
+
+    // //2.yol
+    // $("input[type='radio']").change(function () {
+    //     var selected = $(this).val();
+    //     console.log(selected);
+    // })
+
+
+    // $(document).on('click', '#Gender', function () {
+    //     var x = $('input:radio[name="gender"]:checked').val()
+    //     if (x != undefined) {
+    //         console.log(x);
+    //     }
+    // })
+
+
+
+
+    //1.yol
+    // $('#getnames').click(function () {
+
+    //     $('tbody  > tr').each(function (index, tr) {
+    //         var surname = [];
+    //         var data = $(tr).children()[1].innerText;
+    //         surname.push(data);
+    //         console.log(data);
+    //     });
+    // })
+
+
+
+    //2.yol
+    // $('#getnames').click(function () {
+
+    //     $('tbody tr').each(function (index,tr) {
+    //         var surname = $(this).find("td").eq(1).html();
+    //         console.log(surname);
+    //     });
+    // })
+
+
+
+</script>

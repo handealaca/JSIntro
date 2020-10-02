@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* #img{
+    width: 200px;
+    height: 200px;
+    background-image: url(./download.jfif);
+    background-size:cover;
+} */
+
+        /* #box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        } */
+/* 
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            display:inline;
+            float: left;
+        }
+
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color:yellow;
+            display:inline;
+            float: left;
+        }
+        #box3{
+            width: 200px;
+            height: 200px;
+            background-color:red;
+            display:inline;
+            float: left;
+            position: relative;
+        } */
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <div>
+        <input type="text" id="text1">
+        <input type="text" id="text2">
+    </div>
+    <div>
+        <button onclick="YanyanaYazdır()">Yazdır</button>
+    </div> -->
+
+    <!-- <div>
+        <input type="text" id="sayi1">
+        <input type="text" id="sayi2">
+        <input type="text" id="sayi3">
+    </div>
+    <div>
+        <button onclick="OrtalamaAl()">Ortalama Al</button>
+    </div>
+    <div>
+        <p id="sonuc"></p>
+    </div> -->
+    <!-- 
+
+
+    <div>
+        <input type="text" id="text1">
+        <input type="text" id="text2">
+    </div>
+    <div>
+        <p id="main"></p>
+    </div>
+    <div>
+        <button onclick="Yazdir()">Yazdır</button>
+    </div> -->
+
+    <!-- <div id="box">
+    </div>
+    <div>
+        <button onclick="Bas()">Bas</button>
+    </div> -->
+<!-- 
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+<div>
+    <button onclick="Kaydir()">Kaydır</button>
+</div> -->
+
+<!-- <div id="img"></div>
+<div>
+    <label for="">Genişlik</label>
+    <input type="text" name="" id="genislik">
+</div>
+<div>
+    <label for="">Yükseklik</label>
+    <input type="text" id="yukseklik">
+</div>
+<div>
+    <button onclick="Boyut()">Boyutlandır</button>
+</div> -->
+
+<!-- <div>
+    <input type="text" id="Renk">
+</div>
+<div>
+    <input type="text" id="Arkaplan">
+</div>
+
+<div>
+    <p id="metin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quaerat, asperiores distinctio eligendi doloribus aut, error cum veritatis perferendis quisquam debitis deserunt culpa atque iure qui natus porro? Eaque, magnam?</p>
+</div>
+<div>
+    <button onclick="Renk()">Renk Değiştir</button>
+</div>
+<div>
+    <button onclick="Arkaplan()">Arka Plan</button>
+</div> -->
+
+<!-- <div id="box" style="width: 100px;height: 100px;background-color: aqua;"></div>
+<div>
+    <input type="text" id="sayi" onkeypress="Degis()">
+</div> -->
+ 
+<div>
+    <button onmouseup="Genislet()" id="button">Genişlet </button>
+</div>
+</body>
+
+</html>
+<script> 
+    //1
+    // function YanyanaYazdır(){
+    //     document.getElementById("text2").value= "TR" + document.getElementById("text1").value;
+    // }
+
+    //2
+    // function OrtalamaAl(){
+    //     var x = (document.getElementById("sayi1").value);
+    //     var y = (document.getElementById("sayi2").value);
+    //     var z = (document.getElementById("sayi3").value);
+    //     var sonuc= (+x + +y + +z)/3;
+    // document.getElementById("sonuc").innerHTML= 'Ortalama ' + sonuc;
+    // }
+
+    //3
+    // function Yazdir(){
+    //     document.getElementById("main").innerHTML= document.getElementById("text1").value + document.getElementById("text2").value;
+    // }
+
+    //4
+    // function Bas() {
+    //     var x = document.getElementById("box").style.display;
+    //     if (x == "block") {
+    //         document.getElementById("box").style.display = "none";
+    //     }
+    //     else {
+    //         document.getElementById("box").style.display = "block";
+    //     }
+    // }
+
+    //5
+// function Kaydir(){
+//     document.getElementById("box3").style.right="50px";
+// }
+
+//6
+// function Boyut(){
+//     document.getElementById("img").style.width=document.getElementById("genislik").value+"px";
+//     document.getElementById("img").style.height=document.getElementById("yukseklik").value+"px";
+// }
+
+//8
+// function Renk(){
+// document.getElementById("metin").style.color=document.getElementById("Renk").value;
+// }
+
+// function Arkaplan(){
+// document.getElementById("metin").style.backgroundColor=document.getElementById("Arkaplan").value;
+// }
+
+//10
+// function Degis(){
+//     document.getElementById("box").style.width=document.getElementById("sayi").value + "px"; 
+// }
+
+function Genislet(){
+document.getElementById("button").style.width= 100 +"%";
+}
+</script>

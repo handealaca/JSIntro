@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #horse1 {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 0px;
+
+        }
+
+        #horse2 {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 0px;
+        }
+
+        #horse3 {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 0px;
+            
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <div id="horse1">
+            <img src="./horse.jpg" alt="">
+        </div>
+        <div id="horse2">
+            <img src="./horse.jpg" alt="">
+
+        </div>
+        <div id="horse3">
+            <img src="./horse.jpg" alt="">
+
+        </div>
+    </div>
+ 
+    <div style="padding: 50px;">
+        <button onclick="Basla()">Başla</button>
+    </div>
+</body>
+
+</html>
+<script>
+    function Basla() {
+        var x = 0;
+        var y = 0;
+        var z = 0;
+
+        
+
+        setInterval(() => {
+            var r1 = Math.floor(Math.random() * 100);
+            x = Number(x) + Number(r1);
+            document.getElementById("horse1").style.left = x + "px";
+
+            var r2 = Math.floor(Math.random() * 100);
+            y= Number(y) + Number(r2);
+
+            document.getElementById("horse2").style.left = y + "px";
+
+            var r3 = Math.floor(Math.random() * 100);
+            z = Number(z) + Number(r3);
+            document.getElementById("horse3").style.left = z + "px";
+
+            if (z>1200) {
+                alert("horse3")
+            }
+            if (x>1200){
+                alert("horse1")
+
+            }
+            if (y>1200) {
+                alert("horse2")
+            }
+
+        }, 500);
+
+        
+    }
+</script>

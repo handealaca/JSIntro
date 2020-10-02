@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Kullanıcı Adı</label>
+        <input type="text" id="username">
+    </div>
+    <div>
+        <label for="">Şifre</label>
+        <input type="text" id="password">
+    </div>
+    <div>
+        <button onclick="Giris()">Giriş</button>
+    </div>
+    <div id="screen" style="width: 500px; height: 500px;">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var sayac = 0;
+
+    function Giris() {
+        if (sayac < 3) {
+            if (document.getElementById("username").value == "Hande" && document.getElementById("password").value == "1234") {
+                alert("Giriş Başarılı");
+            }
+            else {
+                sayac++;
+                alert("Tekrar Deneyin");
+            }
+        }
+        else {
+            document.getElementById("screen").style.backgroundColor = 'red';
+        }
+    }
+</script>

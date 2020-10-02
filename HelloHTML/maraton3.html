@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+    <!-- <ul>
+
+    </ul> -->
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Unir Price</th>
+                <th>Units in Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <!-- <div>
+        <button id="1">Products</button>
+        <button id="2">Suppliers</button>
+        <button id="3">Orders</button>
+    </div> -->
+
+    <!-- <div>
+        <input type="text" id="data1">
+        <input type="text" id="data2">
+        <button>Ekle</button>
+    </div> -->
+
+    <!-- <div class="container">
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="">Unit Price</label>
+            <input type="text" class="form-control" id="price">
+        </div>
+        <div class="form-group">
+            <label for="">Supplier Id</label>
+            <input type="text" class="form-control" id="supplier">
+        </div>
+        <div class="form-group">
+            <label for="">Category Id</label>
+            <input type="text" class="form-control" id="category">
+        </div>
+        <div class="form-group">
+            <label for="">Units in Stock</label>
+            <input type="text" class="form-control" id="stock">
+        </div>
+        <button class="btn btn-primary">Ekle</button>
+    </div> -->
+
+
+    <select style="width: 280px" id="productid">
+
+    </select>
+
+
+
+
+
+
+</body>
+
+</html>
+<script>
+
+
+    //1 https://northwind.now.sh/api/products  da kaç tane ürün var? ( getjson ile çekildikten sonra hesaplanacak, console a yazılacak )
+    // var sayac = 0;
+    // var url = "https://northwind.now.sh/api/products";
+    // $.getJSON(url, function (data) {
+    //     data.forEach(function (item) {
+    //         sayac++;
+    //     })
+    //     console.log(sayac);
+    // })
+
+
+    //2-3 Ekrana bir ul koy. unitsInStock 0 a eşit olan ürünlerin adlarını li içerisine yazdırve kırmızı yap.
+    // var url = "https://northwind.now.sh/api/products";
+    // $.getJSON(url, function (data) {
+    //     data.forEach(function(item){
+
+    //         if (item.unitsInStock == 0) {
+    //             $("ul").append("<li>" + item.name + "</li>").css('color', 'red');
+    //         }
+    //     })
+    // })
+
+
+    //4 Bir table aç. getjson ile çektiğin productların name, unitprice ve unitsinstocklarını table içerisine yazdır
+    // var url = "https://northwind.now.sh/api/products";
+    // $.getJSON(url, function (data) {
+    //     data.forEach(function (item) {
+    //         $('tbody').append(`<tr>
+    //     <td>`+ item.name + `</td>
+    //     <td>`+ item.unitPrice + `</td>
+    //     <td>`+ item.unitsInStock + `</td>
+    //     </tr>`)
+    //     })
+    // })
+
+
+    //5 Bir table aç. getjson ile çektiğin productların name lerini büyük harf, unitprice larını da 1.18 ile çarpıp tablo içerisine yazdır.
+    // var url = "https://northwind.now.sh/api/products";
+    // $.getJSON(url, function (data) {
+    //     data.forEach(function (item) {
+    //         $('tbody').append(`<tr>
+    //      <td>`+ item.name.toUpperCase() + `</td>
+    //      <td>`+ item.unitPrice * 1.18 + `</td>
+    //     </tr>`)
+    //     })
+    // })
+
+
+    //6 Ekrana 3 tane buton koy. 1. butona tıkladığında servisteki ürünlerin sayısını, 2. butona tıkladığında suppliers ların sayısını, 3. butona tıkladığında ordersların sayısını console a yazdırsın.
+    // $('#1').click(function () {
+    //     var sayac = 0;
+    //     var url = "https://northwind.now.sh/api/products";
+    //     $.getJSON(url, function (data) {
+    //         data.forEach(function (item) {
+    //             sayac++;
+    //         })
+    //         console.log("Products: "+sayac);
+    //     })
+    // })
+
+    // $('#2').click(function () {
+    //     var sayac = 0;
+    //     var url = "https://northwind.now.sh/api/suppliers";
+    //     $.getJSON(url, function (data) {
+    //         data.forEach(function (item) {
+    //             sayac++;
+    //         })
+    //         console.log("Suppliers: "+sayac);
+    //     })
+    // })
+
+    // $('#3').click(function () {
+    //     var sayac = 0;
+    //     var url = "https://northwind.now.sh/api/orders";
+    //     $.getJSON(url, function (data) {
+    //         data.forEach(function (item) {
+    //             sayac++;
+    //         })
+    //         console.log("Orders: "+sayac);
+    //     })
+    // })
+
+
+    //7 Ekrana iki input bir buton koy. Butona tıkladığında inputtan aldığı değer aralıklarına göre ürünleri table a append etsin. Örneğin inputlara 10 ve 20 girdi. Unitprice ları 10 ile 20 arasındaki ürünleri tabloya append etsin.
+    // $('button').click(function () {
+    //     var x = $('#data1').val();
+    //     var y = $('#data2').val();
+
+    //     var url = "https://northwind.now.sh/api/products";
+    //     $.getJSON(url, function (data) {
+    //         data.forEach(function (item) {
+    //             if(x<item.unitPrice && y>item.unitPrice){
+    //                 $('tbody').append(`<tr>
+    //                 <td>`+ item.name + `</td>
+    //                 <td>`+ item.unitPrice + `</td>
+    //                 <td>`+ item.unitsInStock + `</td>
+    //                  </tr>`)
+    //             }
+    //         })
+    //     })
+    // })
+
+
+    //8 Productname, unitprice, unitsinstock, categoryid, supplierid inputları olan bir form tasarla. Butona bastığında ajax ile verileri servise yollasın. 
+    // $('button').click(function () {
+    //     var product = new Object();
+    //     product.name = $("#ad").val();
+    //     product.unitPrice = $("#price").val();
+    //     product.unitsInStock = $("#stock").val();
+    //     product.categoryId = $("#category").val();
+
+    //     $.ajax({
+    //         url:"https://northwind.now.sh/api/products",
+    //         type: "POST",
+    //         data: product,
+    //         success: function () {
+    //             alert('Data eklendi')
+    //         }
+    //     })
+    // })
+
+
+    var url = "https://northwind.now.sh/api/products";
+    var options=[];
+    $.getJSON(url, function (data) {
+        data.forEach(function (item) {
+            if (!options.includes(item.categoryId)) { 
+                options.push(item.categoryId) }
+        })
+
+        options.sort().forEach(item1=>{
+            $('select').append(`<option>`+item1+`</option>`);
+        });
+
+        $('select').change(function () {
+            var element = document.getElementById("productid");
+            var eselected = element.options[element.selectedIndex].text;
+            data.forEach(function (item) {
+                if (eselected == item.categoryId) {
+                    console.log(eselected);
+                    $('tbody').append(`<tr>
+            <td>`+ item.name + `</td>
+            <td>`+ item.unitPrice + `</td>
+            <td>`+ item.unitsInStock + `</td>
+             </tr>`)
+                }
+            })
+        })
+    })
+
+</script>

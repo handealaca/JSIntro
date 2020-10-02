@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="">Unit Price</label>
+            <input type="text" class="form-control" id="price">
+        </div>
+        <div class="form-group">
+            <label for="">Supplier Id</label>
+            <input type="text" class="form-control" id="id">
+        </div>
+        <button class="btn btn-primary">Ekle</button>
+    </div>
+        
+   
+</body>
+
+</html>
+<script>
+    $('button').click(function () {
+        var product = new Object();
+        var supplier = new Object();
+        product.name = $('#name').val();
+        product.unitPrice = $('#price').val();
+        supplier.id = $('#id').val();
+        product.supplier=supplier;
+
+        $.ajax({
+            url:"https://northwind.now.sh/api/products",
+            type: "POST",
+            data: product,
+            success: function () {
+                alert("Data Eklendi");
+            }
+        })
+    })
+
+  
+</script>

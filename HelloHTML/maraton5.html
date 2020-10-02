@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Pilot Adı</th>
+                <th>Ortalama Hız</th>
+                <th>Takım</th>
+                <th>Ülke</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+</html>
+<script>
+
+    //Yarışları ul-li içerisinde listele ( racename )
+
+    // fetch('http://ergast.com/api/f1/2004.json')
+    //     .then((res) => res.json())
+    //     .then((data) => {
+
+    //         for (i = 0; i < data.MRData.RaceTable.Races.length; i++) {
+    //             $('body').append(`<ul>
+    //             <li>` + data.MRData.RaceTable.Races[i].raceName + `</li>
+    //             </ul>`)
+    //         }
+    //     })
+
+
+
+    //Bir tablo aç. Kolonlar ( Pilot Adı( givenname + familyname), ortalama hız, averagespeed objesindeki speed), takımı (constructor id), ülkesi
+
+    fetch('http://ergast.com/api/f1/2004.json')
+        .then((res) => res.json())
+        .then((data) => {
+            var arr = data.MRData.RaceTable.Races;
+
+
+            for (i = 1; i < arr.length; i++) {
+              
+                fetch('http://ergast.com/api/f1/2004/' + i + '/results.json')
+                    .then((res) => res.json())
+                    .then((item) => {
+                        var arr1 = item.MRData.RaceTable.Races;
+                        $('tbody').append(`<tr>
+                <td>` + arr1[i].raceName + `</td>
+                </tr>`);
+                        arr1.forEach(element => {
+                           
+                            var raceresult = element.Results;
+
+                            for (j = 0; j < raceresult.length; j++) {
+                                $('tbody').append(`<tr>
+                        <td>` + raceresult[j].Driver.givenName + ` ` + raceresult[j].Driver.familyName + `</td>
+                        <td>` + raceresult[j].FastestLap.AverageSpeed.speed + raceresult[j].FastestLap.AverageSpeed.units + `</td>
+                        <td>` + raceresult[j].Constructor.constructorId + `</td>
+                        <td>` + raceresult[j].Constructor.nationality + `</td>
+                        </tr>`)
+                            }
+
+                        });
+                    })
+            }
+
+        })
+
+
+
+
+
+</script>

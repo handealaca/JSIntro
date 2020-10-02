@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="city">
+    </div>
+    <div>
+        <button onclick="AddCity()">Ekle</button>
+    </div>
+</body>
+
+</html>
+<script>
+    var sayilar = [-4, 2, 35, -11];
+    var sehirler = ['İstanbul', 'İzmir', 'Hatay', 'Edirne'];
+
+
+    function AddCity() {
+        var city = document.getElementById("city").value;
+        sehirler.push(city);
+    }
+
+    //1 Dizi eleman sayısı
+    console.log(sehirler.length);
+
+    //2 Sıralama
+    console.log(sayilar.sort(function (a, b) { return a - b }));
+
+    //3 Eleman yakalama
+    console.log(sehirler.slice(1, 3));
+
+    //4 Ters çevir
+    console.log(sehirler.reverse());
+
+    //5 Dizinin 3.elemanını yakala
+    console.log(sayilar[2]);
+
+    //6 Elamanın nerede olduğu
+    console.log(sehirler.indexOf('İzmir'));
+
+    var sayac = 0;
+    setInterval(() => {
+        console.log(sayac);
+        sayac++;
+    }, 1000);
+    
+</script>

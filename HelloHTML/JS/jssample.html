@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="sayi1">
+        <input type="text" id="sayi2">
+
+    </div>
+    <div>
+        <button onclick="Topla()">Kare Hesapla</button>
+    </div>
+</body>
+</html>
+<script>
+    function Topla(){
+        var x = parseInt(document.getElementById("sayi1").value);
+        var y = parseInt(document.getElementById("sayi2").value);
+        var sonuc= x + y;
+        console.log(sonuc);
+    }
+</script>
