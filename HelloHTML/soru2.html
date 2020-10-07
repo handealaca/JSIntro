@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .title {
+            display: flex;
+            background-color: black;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Avarage Speed</th>
+                <th>Team</th>
+                <th>Nationality</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
+<script>
+
+    fetch('http://ergast.com/api/f1/2004.json')
+        .then((res) => res.json())
+        .then(race => {
+            var race = race.MRData.RaceTable.Races;
+
+
+
+            for (let i = 1; i < race.length; i++) {
+
+
+                fetch('http://ergast.com/api/f1/2004/' + i + '/results.json')
+                    .then((res) => res.json())
+                    .then(raceresult => {
+                        var raceresult = raceresult.MRData.RaceTable.Races[0].Results;
+
+                        $('tbody').append(`<tr><td>` + race[i].round + `</td></tr>`);
+
+                        for (let j = 0; j < raceresult.length; j++) {
+                            var averageSpeed = raceresult[j].FastestLap;
+                            var unspeed;
+                            if (averageSpeed == undefined) {
+                                unspeed="no speed info";
+                                
+                            }
+                            else {
+                                unspeed=averageSpeed.AverageSpeed.speed + averageSpeed.AverageSpeed.units;
+
+
+
+                            }
+                            
+                            $('tbody').append(`<tr>
+                                <td>` + raceresult[j].Driver.givenName + ` ` + raceresult[j].Driver.familyName + `</td>
+                                <td>` + unspeed + `</td>
+                                <td>` + raceresult[j].Constructor.constructorId + `</td>
+                                <td>` + raceresult[j].Constructor.nationality + `</td>
+                                </tr>`)
+
+                        }
+                    })
+
+
+
+
+
+            }
+
+
+
+        })
+
+
+
+
+
+
+
+    // fetch('http://ergast.com/api/f1/2004.json')
+    //     .then((res) => res.json())
+    //     .then(data => {
+    //         var race = data.MRData.RaceTable.Races;
+
+    //         race.forEach(element => {
+
+    //             fetch('http://ergast.com/api/f1/2004/' + element.round + '/results.json')
+    //                 .then((res) => res.json())
+    //                 .then(data => {
+
+    //                     var raceresult = data.MRData.RaceTable.Races[0].Results;
+
+    //                     $('tbody').append(`<tr class='title'><td>` + element.raceName + `</td></tr>`);
+
+    //                     raceresult.forEach(item => {
+
+    //                         var givenName = item.Driver.givenName;
+    //                         var familyName = item.Driver.familyName;
+    //                         var constructorId = item.Constructor.constructorId;
+    //                         var nationality = item.Constructor.nationality;
+
+    //                         var averageSpeed;
+    //                         if (item.FastestLap == undefined) {
+    //                             averageSpeed = "No speed info";
+    //                         }
+
+    //                         else {
+    //                             averageSpeed = item.FastestLap.AverageSpeed.speed + item.FastestLap.AverageSpeed.units;
+    //                         }
+    //                         $('tbody').append(`<tr>
+    //                             <td>` + givenName + ` ` + familyName + `</td>
+    //                             <td>` + averageSpeed + `</td>
+    //                             <td>` + constructorId + `</td>
+    //                             <td>` + nationality + `</td>
+    //                             </tr>`)
+
+    //                     })
+    //                 });
+    //         })
+    //     });
+
+
+
+
+
+
+
+
+
+
+
+    // fetch('https://ergast.com/api/f1/2004.json')
+    // .then(res => res.json())
+    // .then(data => data.MRData.RaceTable.Races)
+    // .then(link => {
+
+    //     link.forEach(item => {
+    //         var address = item.round; // her round için farklı sayfaların linkini almak
+
+    //         fetch('https://ergast.com/api/f1/2004/' + address + '/results.json')
+    //             .then(response => response.json())
+    //             .then(data => data.MRData.RaceTable.Races[0].Results)
+    //             .then(content => {
+
+    //                 $('tbody').append(`<tr class='baslik'><td Colspan='4'><p> Round ` + address + `</p></td></tr>`);
+
+    //                 content.forEach(element => {
+
+    //                     var givenName = element.Driver.givenName;
+    //                     var familyName = element.Driver.familyName;
+    //                     var constructorId = element.Constructor.constructorId;
+
+    //                     var averageSpeed;
+    //                     if (element.FastestLap == undefined) { // bazı FastestLap dataları eksi bu yüzden küçük bir kontrol
+    //                         averageSpeed = "No speed info";
+    //                     } 
+    //                     else {
+    //                         averageSpeed = element.FastestLap.AverageSpeed.speed;
+    //                     }
+
+    //                     $('tbody').append(`<tr><td>` + givenName + `</td>
+    //                                     <td>` + familyName + `</td>
+    //                                     <td>` + averageSpeed + `</td>
+    //                                     <td>` + constructorId + `</td>
+    //                                     </tr>`);
+    //                 });
+
+    //             });
+
+    //     });
+    // })
+    //     .catch(err => { //catch bloğunu yazmadan kod çalışır.Doğrusu yazmak.
+    //         console.error(err);
+    //     });
+
+</script>
